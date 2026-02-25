@@ -1,16 +1,113 @@
-# React + Vite
+Training Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple in-memory Training Management System built using React + Tailwind CSS + Lucide Icons + React Hot Toast.
 
-Currently, two official plugins are available:
+This application allows management of:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Subjects
 
-## React Compiler
+Courses
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Batches
 
-## Expanding the ESLint configuration
+Students
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+All data is handled using React state (no backend).
+
+🚀 Live Demo
+
+👉 Add your deployed link here (Netlify / Vercel)
+
+🛠 Tech Stack
+Layer	            Technology
+Frontend	        React (Functional Components + Hooks)
+Styling 	        Tailwind CSS
+Icons	            Lucide React
+Notifications   	react-hot-toast
+Build Tool      	Vite
+
+🚀 Features
+Subjects
+
+Add subject
+
+Prevent duplicates
+
+Prevent deletion if used in course
+
+Courses
+
+Minimum 2 subjects required
+
+Prevent duplicate courses
+
+Prevent deletion if used in batch or by students
+
+Batches
+
+Assign to course
+
+Validate start & end time
+
+Prevent duplicate batch names per course
+
+Prevent deletion if students exist
+
+Students
+
+Enroll in course & batch
+
+Prevent duplicate enrollment
+
+Prevent time conflicts
+
+Validate batch belongs to selected course
+
+🧱 Data Model
+
+Subject
+
+{ id, name }
+
+Course
+
+{ id, name, subjectIds[] }
+
+Batch
+
+{ id, name, courseId, startTime, endTime }
+
+Student
+
+{ id, name, courseId, batchId }
+
+Relationships:
+
+Course → Multiple Subjects
+
+Course → Multiple Batches
+
+Batch → Multiple Students
+
+🔐 Data Integrity
+
+Duplicate checks (case-insensitive)
+
+Referential integrity (cannot delete referenced data)
+
+Time conflict validation for students
+
+Required field validation
+
+Clone the repository:
+
+git clone https://github.com/your-username/training-management-system.git
+cd training-management-system
+
+Install dependencies:
+
+npm install
+
+Start development server:
+
+npm run dev
