@@ -1,113 +1,137 @@
-Training Management System
+# 📚 Training Management System
 
-A simple in-memory Training Management System built using React + Tailwind CSS + Lucide Icons + React Hot Toast.
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Tailwind
+CSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css)
+![Vite](https://img.shields.io/badge/Vite-BuildTool-646CFF?logo=vite)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-This application allows management of:
+A simple **in-memory Training Management System** built using **React,
+Tailwind CSS, Lucide Icons, and React Hot Toast**.
 
-Subjects
+This application helps manage:
 
-Courses
+-   Subjects
+-   Courses
+-   Batches
+-   Students
 
-Batches
+> ⚠️ Note: Data is stored in React state (no backend). Data resets on
+> page refresh.
 
-Students
+------------------------------------------------------------------------
 
-All data is handled using React state (no backend).
+## 🚀 Live Demo
 
-🚀 Live Demo
+🔗 Add your deployed link here (Netlify / Vercel)
 
-👉 Add your deployed link here (Netlify / Vercel)
+------------------------------------------------------------------------
 
-🛠 Tech Stack
-Layer	            Technology
-Frontend	        React (Functional Components + Hooks)
-Styling 	        Tailwind CSS
-Icons	            Lucide React
-Notifications   	react-hot-toast
-Build Tool      	Vite
+## 📌 Table of Contents
 
-🚀 Features
-Subjects
+-   [Tech Stack](#-tech-stack)
+-   [Features](#-features)
+-   [Data Model](#-data-model)
+-   [Data Integrity](#-data-integrity)
+-   [Installation](#-installation)
 
-Add subject
+------------------------------------------------------------------------
 
-Prevent duplicates
+## 🛠 Tech Stack
 
-Prevent deletion if used in course
+  Layer           Technology
+  --------------- -----------------
+  Frontend        React (Hooks)
+  Styling         Tailwind CSS
+  Icons           Lucide React
+  Notifications   react-hot-toast
+  Build Tool      Vite
 
-Courses
+------------------------------------------------------------------------
 
-Minimum 2 subjects required
+## 🚀 Features
 
-Prevent duplicate courses
+### 📘 Subjects
 
-Prevent deletion if used in batch or by students
+-   Add subject
+-   Prevent duplicates (case-insensitive)
+-   Prevent deletion if linked to a course
 
-Batches
+### 🎓 Courses
 
-Assign to course
+-   Minimum 2 subjects required
+-   Prevent duplicate course names
+-   Prevent deletion if linked to batches or students
 
-Validate start & end time
+### 🕒 Batches
 
-Prevent duplicate batch names per course
+-   Assign to a course
+-   Validate start and end time
+-   Prevent duplicate batch names within same course
+-   Prevent deletion if students are enrolled
 
-Prevent deletion if students exist
+### 👨‍🎓 Students
 
-Students
+-   Enroll in course & batch
+-   Prevent duplicate enrollment
+-   Prevent time conflicts
+-   Validate batch belongs to selected course
 
-Enroll in course & batch
+------------------------------------------------------------------------
 
-Prevent duplicate enrollment
+## 🧱 Data Model
 
-Prevent time conflicts
+### Subject
 
-Validate batch belongs to selected course
+    { id, name }
 
-🧱 Data Model
+### Course
 
-Subject
+    { id, name, subjectIds[] }
 
-{ id, name }
+### Batch
 
-Course
+    { id, name, courseId, startTime, endTime }
 
-{ id, name, subjectIds[] }
+### Student
 
-Batch
+    { id, name, courseId, batchId }
 
-{ id, name, courseId, startTime, endTime }
+### 🔗 Relationships
 
-Student
+-   Course → Multiple Subjects\
+-   Course → Multiple Batches\
+-   Batch → Multiple Students
 
-{ id, name, courseId, batchId }
+------------------------------------------------------------------------
 
-Relationships:
+## 🔐 Data Integrity
 
-Course → Multiple Subjects
+-   Duplicate checks (case-insensitive)
+-   Referential integrity (cannot delete referenced data)
+-   Time conflict validation for students
+-   Required field validation
 
-Course → Multiple Batches
+------------------------------------------------------------------------
 
-Batch → Multiple Students
-
-🔐 Data Integrity
-
-Duplicate checks (case-insensitive)
-
-Referential integrity (cannot delete referenced data)
-
-Time conflict validation for students
-
-Required field validation
+## ⚙️ Installation
 
 Clone the repository:
 
-git clone https://github.com/your-username/training-management-system.git
-cd training-management-system
+    git clone https://github.com/your-username/training-management-system.git
+    cd training-management-system
 
 Install dependencies:
 
-npm install
+    npm install
 
 Start development server:
 
-npm run dev
+    npm run dev
+
+------------------------------------------------------------------------
+
+## 👤 Author
+
+**Santhosh S**\
+GitHub: https://github.com/SanthoshS2302
