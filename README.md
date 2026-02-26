@@ -23,7 +23,7 @@ This application helps manage:
 
 ## 🚀 Live Demo
 
-🔗 Add your deployed link here (Netlify / Vercel)
+🔗 https://training-mgmt-sys.netlify.app/
 
 ------------------------------------------------------------------------
 
@@ -43,7 +43,6 @@ This application helps manage:
   --------------- -----------------
   Frontend        React (Hooks)
   Styling         Tailwind CSS
-  Icons           Lucide React
   Notifications   react-hot-toast
   Build Tool      Vite
 
